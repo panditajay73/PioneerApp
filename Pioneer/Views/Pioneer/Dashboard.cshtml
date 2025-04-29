@@ -1,0 +1,14 @@
+﻿@model Pioneer.Models.PioneerLogin
+
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+@{
+    <h1 id="message">Your register number - @Model.RegistrationNumber is successfully inserted to PIONEER UNIVERSITY</h1>
+}
+
+<div>
+    <a asp-controller="Pioneer"  asp-action="PionerPortal">Back to Login page</a>
+</div>
+

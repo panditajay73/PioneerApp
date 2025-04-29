@@ -1,0 +1,34 @@
+﻿@model Pioneer.Models.PioneerLogin
+
+@{
+    ViewData["Title"] = "PioneerPortal";
+}
+
+<h1>PioneerPortal</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="PioneerPortal">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="RegistrationNumber" class="control-label"></label>
+                <input asp-for="RegistrationNumber" class="form-control" />
+                <span asp-validation-for="RegistrationNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" id="btnLogin" value="Login" class="btn btn-primary" />
+                <a id="lnkRegister" asp-controller="Pioneer" asp-action="InsertFreshman">Register</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
